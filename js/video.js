@@ -12,15 +12,16 @@ document.querySelector("#play").addEventListener("click", function() {
 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%"
 });
 
-document.querySelector("#pause").addEventListener("click", function() {
-	console.log("Pause Video")
-	video.pause()
-});
 
 document.querySelector("#slower").addEventListener("click", function() {
 	// console.log("Current speed is " + video.playbackRate)
 	video.playbackRate *= 0.95
 	console.log("New speed is " + video.playbackRate)
+});
+
+document.querySelector("#pause").addEventListener("click", function() {
+	console.log("Pause Video")
+	video.pause()
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
@@ -54,17 +55,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
-document.querySelector("#slider").addEventListener("input", function() {
-
-	video.volume = this.value / 100
-	console.log(this.value / 100)
-	document.querySelector("#volume").innerHTML = video.volume * 100 
-});
-
 document.querySelector("#vintage").addEventListener("click", function() {
 	video.classList.add("oldSchool")
 });
 
+document.querySelector("#slider").addEventListener("input", function() {
+
+	video.volume = this.value / 100
+	console.log(this.value / 100)
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%" 
+});
 
 document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove("oldSchool")
